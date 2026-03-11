@@ -1,0 +1,996 @@
+{
+  "info": {
+    "_postman_id": "4ef920e7-f06f-4f5e-8789-61616050d5da",
+    "name": "01 Data Services REST (Master Medical Data)",
+    "description": "Provides product-related data and associated medical master data.\n\n##### **Available Endpoints**\n\n- Retrieve all records or only those modified since a given date _(delta management)_\n    \n- Retrieve a record by its identifier\n    \n- Retrieve records via simple search queries\n    \n\n##### **Available Entities**\n\n- Articles\n    \n- Companies\n    \n- Interactions\n    \n- Products\n    \n- Product Information\n    \n- Service Providers\n    \n- Value Sets\n    \n\n**Route to generate valid token : 01 Get and Save Token for Data Services REST (Master Medical Data)**",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14368159",
+    "_collection_link": "https://go.postman.co/collection/14368159-4ef920e7-f06f-4f5e-8789-61616050d5da?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Articles",
+      "item": [
+        {
+          "name": "Get articles paginated",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}articles?l=10&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}articles"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get articles paginated with ModifiedSince date",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}articles?l=10&o=0&modifiedSince=2025-10-29T07%3A00%3A00",
+              "host": [
+                "{{masterMedicalData_url_REST}}articles"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                },
+                {
+                  "key": "modifiedSince",
+                  "value": "2025-10-29T07%3A00%3A00"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search article",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}articles/search?q=nixdrin&l=10&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}articles"
+              ],
+              "path": [
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "nixdrin"
+                },
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get article by Pharmacode",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}articles/:pharmacode",
+              "host": [
+                "{{masterMedicalData_url_REST}}articles"
+              ],
+              "path": [
+                ":pharmacode"
+              ],
+              "variable": [
+                {
+                  "key": "pharmacode",
+                  "value": "7853765"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get article by Gtin",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}articles/:gtin?idType=gtin",
+              "host": [
+                "{{masterMedicalData_url_REST}}articles"
+              ],
+              "path": [
+                ":gtin"
+              ],
+              "query": [
+                {
+                  "key": "idType",
+                  "value": "gtin"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "gtin",
+                  "value": "7639999000017"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Companies",
+      "item": [
+        {
+          "name": "Get companies paginated",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}companies?l=10&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}companies"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get companies paginated with ModifiedSince date",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}companies?l=10&o=0&modifiedSince=2025-10-29T07%3A00%3A00",
+              "host": [
+                "{{masterMedicalData_url_REST}}companies"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                },
+                {
+                  "key": "modifiedSince",
+                  "value": "2025-10-29T07%3A00%3A00"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search a company",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}companies/search?q=verfora&l=10&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}companies"
+              ],
+              "path": [
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "verfora"
+                },
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get company by Company number",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}companies/:CompanyNumber",
+              "host": [
+                "{{masterMedicalData_url_REST}}companies"
+              ],
+              "path": [
+                ":CompanyNumber"
+              ],
+              "variable": [
+                {
+                  "key": "CompanyNumber",
+                  "value": "12254"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get company by GlobalLocationNumber",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}companies/:GlobalLocationNumber?idType=GlobalLocationNumber",
+              "host": [
+                "{{masterMedicalData_url_REST}}companies"
+              ],
+              "path": [
+                ":GlobalLocationNumber"
+              ],
+              "query": [
+                {
+                  "key": "idType",
+                  "value": "GlobalLocationNumber"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "GlobalLocationNumber",
+                  "value": "7640167720002"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Interactions",
+      "item": [
+        {
+          "name": "Get interactions paginated",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}companies?l=10&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}companies"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get interactions paginated with ModifiedSince date",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}interactions?l=10&o=0&modifiedSince=2025-10-29T07%3A00%3A00",
+              "host": [
+                "{{masterMedicalData_url_REST}}interactions"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                },
+                {
+                  "key": "modifiedSince",
+                  "value": "2025-10-29T07%3A00%3A00"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search an interaction",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}interactions/search?q=Antiphlogistika&l=10&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}interactions"
+              ],
+              "path": [
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "Antiphlogistika"
+                },
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Interaction by InteractionNumber",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}interactions/:InteractionNumber",
+              "host": [
+                "{{masterMedicalData_url_REST}}interactions"
+              ],
+              "path": [
+                ":InteractionNumber"
+              ],
+              "variable": [
+                {
+                  "key": "InteractionNumber",
+                  "value": "45"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get products paginated",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}products?l=10&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}products"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get products paginated with ModifiedSince date",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}products?l=10&o=0&modifiedSince=2025-10-29T07%3A00%3A00",
+              "host": [
+                "{{masterMedicalData_url_REST}}products"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                },
+                {
+                  "key": "modifiedSince",
+                  "value": "2025-10-29T07%3A00%3A00"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search product",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}products/search?q=nixdrin&l=10&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}products"
+              ],
+              "path": [
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "nixdrin"
+                },
+                {
+                  "key": "l",
+                  "value": "10"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product by ProductNr",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}products/:productNumber",
+              "host": [
+                "{{masterMedicalData_url_REST}}products"
+              ],
+              "path": [
+                ":productNumber"
+              ],
+              "variable": [
+                {
+                  "key": "productNumber",
+                  "value": "1617601"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product by Pharmacode",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}products/:pharmacode?idType=pharmacode",
+              "host": [
+                "{{masterMedicalData_url_REST}}products"
+              ],
+              "path": [
+                ":pharmacode"
+              ],
+              "query": [
+                {
+                  "key": "idType",
+                  "value": "pharmacode"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "pharmacode",
+                  "value": "5939615"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product Informations",
+      "item": [
+        {
+          "name": "Get product professional information by ProductNr",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}professional-information/:productNumber?idType=productNumber&language=fr",
+              "host": [
+                "{{masterMedicalData_url_REST}}professional-information"
+              ],
+              "path": [
+                ":productNumber"
+              ],
+              "query": [
+                {
+                  "key": "idType",
+                  "value": "productNumber"
+                },
+                {
+                  "key": "language",
+                  "value": "fr"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "productNumber",
+                  "value": "73168"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product professional information by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}professional-information/2409",
+              "host": [
+                "{{masterMedicalData_url_REST}}professional-information"
+              ],
+              "path": [
+                "2409"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product patient information by ProductNr",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}patient-information/:productNumber?idType=productNumber&language=fr",
+              "host": [
+                "{{masterMedicalData_url_REST}}patient-information"
+              ],
+              "path": [
+                ":productNumber"
+              ],
+              "query": [
+                {
+                  "key": "idType",
+                  "value": "productNumber"
+                },
+                {
+                  "key": "language",
+                  "value": "fr"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "productNumber",
+                  "value": "73168"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product patient information by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}patient-information/16272",
+              "host": [
+                "{{masterMedicalData_url_REST}}patient-information"
+              ],
+              "path": [
+                "16272"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Service Providers",
+      "item": [
+        {
+          "name": "Get service providers paginated",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}serviceproviders?l=100&o=0",
+              "host": [
+                "{{masterMedicalData_url_REST}}serviceproviders"
+              ],
+              "query": [
+                {
+                  "key": "l",
+                  "value": "100"
+                },
+                {
+                  "key": "o",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get service providers by PartnerNr",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}serviceproviders/:partnerNumber",
+              "host": [
+                "{{masterMedicalData_url_REST}}serviceproviders"
+              ],
+              "path": [
+                ":partnerNumber"
+              ],
+              "variable": [
+                {
+                  "key": "partnerNumber",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ValueSets",
+      "item": [
+        {
+          "name": "Get all value sets name",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}value-sets/names",
+              "host": [
+                "{{masterMedicalData_url_REST}}value-sets"
+              ],
+              "path": [
+                "names"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get specific value set",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}value-sets/:valueSetName/entries",
+              "host": [
+                "{{masterMedicalData_url_REST}}value-sets"
+              ],
+              "path": [
+                ":valueSetName",
+                "entries"
+              ],
+              "variable": [
+                {
+                  "key": "valueSetName",
+                  "value": "PriceType"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get specific value set value",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}value-sets/:valueSetName/:value",
+              "host": [
+                "{{masterMedicalData_url_REST}}value-sets"
+              ],
+              "path": [
+                ":valueSetName",
+                ":value"
+              ],
+              "variable": [
+                {
+                  "key": "valueSetName",
+                  "value": "PriceType"
+                },
+                {
+                  "key": "value",
+                  "value": "PPUB"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all value sets",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ocp-Apim-Subscription-Key",
+                "value": "{{masterMedicalData_apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{masterMedicalData_url_REST}}value-sets",
+              "host": [
+                "{{masterMedicalData_url_REST}}value-sets"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{masterMedicalData_REST_Token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
