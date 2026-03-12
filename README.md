@@ -10,9 +10,9 @@ Access to the postman public workspace : https://www.postman.com/hcimedicaldata
 - ui-components-workshop
    - [UI Components hands-on](./handson-fatclient/README.md)
 - documentation
-   - How to filter data in our graphQL API ([Filtering.pdf](./Documentation/GraphQL-Api/Filtering.pdf) /  [Filter-Operators.pdf](./Documentation/GraphQL-Api/Filter-Operators.pdf))
-   - How to use the facets in our graphQL API ([Faceting.pdf](./Documentation/GraphQL-Api/Faceting.pdf))
-   - How does our product search work ([Product-Search.pdf](./Documentation/GraphQL-Api/Product-Search.pdf))
+   - How to filter data in our graphQL API ([Filtering.pdf](./documentation/GraphQL-Api/Filtering.pdf) /  [Filter-Operators.pdf](./Documentation/GraphQL-Api/Filter-Operators.pdf))
+   - How to use the facets in our graphQL API ([Faceting.pdf](./documentation/GraphQL-Api/Faceting.pdf))
+   - How does our product search work ([Product-Search.pdf](./documentation/GraphQL-Api/Product-Search.pdf))
 - postman (files to be imported)
    - collections
       - 01 Data Services REST (Master Medical Data) ([01_Data_Services_REST.postman_collection.json](./postman/01_Data_Services_REST.postman_collection.json))
